@@ -1,10 +1,10 @@
-# awRTC-signalling-firebase
+# awRTC-signalling-angularfire
 
-A NPM package that implements firebase signalling for awRTC.
+A NPM package that implements Angular firebase signalling for awRTC.
 
 ## Installing
 
 To install run: 
 ```shell
-npm install awrtc-signalling-firebase
+npm install awrtc-signalling-angularfire
 ```

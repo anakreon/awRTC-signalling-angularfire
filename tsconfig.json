@@ -5,6 +5,7 @@
         "declaration": true,
         "outDir": "./lib",
         "strict": true,
+        "skipLibCheck": true,
         "lib": [
             "dom",
             "es6",

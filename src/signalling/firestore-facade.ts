@@ -1,12 +1,11 @@
 import {
-    AngularFirestore, DocumentChangeAction, Action, DocumentSnapshot, AngularFirestoreDocument, QuerySnapshot
+    AngularFirestore, DocumentChangeAction, Action, DocumentSnapshot, AngularFirestoreDocument, QuerySnapshot, QueryDocumentSnapshot
 } from '@angular/fire/firestore';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface FirestoreObject {
-    id: string;
     [index: string]: any;
 }
 
@@ -98,7 +97,7 @@ export class FirestoreFacade {
         const parentDocument = this.getDocumentReference(this.firestore, parentCollectionName, parentDocumentId);
         return parentDocument.collection(collectionName).ref.get().then((snapshot: QuerySnapshot<FirestoreObject>) => {
             const batch = this.firestore.firestore.batch();
-            snapshot.docs.forEach((doc: DocumentSnapshot<FirestoreObject>) => {
+            snapshot.docs.forEach((doc: QueryDocumentSnapshot<FirestoreObject>) => {
                 batch.delete(doc.ref);
             });
             return batch.commit();

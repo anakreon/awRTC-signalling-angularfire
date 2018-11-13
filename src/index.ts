@@ -1,1 +1,1 @@
-export { FirebaseSignalling } from './signalling/signalling-firebase';
+export { AngularfireSignalling } from './signalling/signalling-angularfire';
