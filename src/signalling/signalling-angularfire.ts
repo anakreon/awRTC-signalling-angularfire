@@ -25,7 +25,7 @@ export class AngularfireSignalling extends SignallingBase {
         this.firestoreFacade.addDocument(this.firestoreConfig.peerCollectionName, peerObject).then(() => {
             this.firestoreFacade.getCollection(this.firestoreConfig.peerCollectionName).pipe(take(1)).toPromise().then((peers) => {
                 const peerList = peers.map((peer: any) => peer.peerId);
-                this.dispatch('peerList', { peerList });
+                this.handle('peerList', { peerList });
             });
         });
     }
@@ -38,13 +38,13 @@ export class AngularfireSignalling extends SignallingBase {
                     const data = JSON.parse(signallingObject.data);
                     switch (signallingObject.type) {
                         case 'offer': 
-                            this.dispatch('offer', { peerId: signallingObject.sourcePeerId, offer: data });
+                            this.handle('offer', { peerId: signallingObject.sourcePeerId, offer: data });
                             break;
                         case 'answer':
-                            this.dispatch('answer', { peerId: signallingObject.sourcePeerId, answer: data });
+                            this.handle('answer', { peerId: signallingObject.sourcePeerId, answer: data });
                             break;
                         case 'candidate':
-                            this.dispatch('newCandidate', { peerId: signallingObject.sourcePeerId, iceCandidate: data }); 
+                            this.handle('newCandidate', { peerId: signallingObject.sourcePeerId, iceCandidate: data }); 
                     }
                 });
             });

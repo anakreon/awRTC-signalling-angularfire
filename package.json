@@ -1,6 +1,6 @@
 {
     "name": "awrtc-signalling-angularfire",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Angular firebase signalling for awRTC",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -37,7 +37,7 @@
     "homepage": "https://github.com/anakreon/awRTC-signalling-angularfire#readme",
     "dependencies": {
         "@angular/fire": "^5.1.0",
-        "awrtc-signalling": "^0.0.5",
+        "awrtc-signalling": "^0.0.6",
         "firebase": "^5.5.7",
         "rxjs": "^6.3.3"
     }
