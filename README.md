@@ -1,6 +1,6 @@
 # awRTC-signalling-angularfire
 
-A NPM package that implements Angular firebase signalling for awRTC.
+NPM package that implements Angular firebase signalling for awRTC.
 
 ## Installing
 
